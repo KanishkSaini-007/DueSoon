@@ -24,6 +24,7 @@
 
   function renderNext() {
     var box = $("next"), n = L.nextUp(items, Date.now());
+    document.title = n ? L.countdown(n.due, Date.now()) + " - " + n.title + " - DueSoon" : "DueSoon - what is due next";
     box.replaceChildren();
     if (!n) {
       box.className = "next empty";
